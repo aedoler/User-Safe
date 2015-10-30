@@ -2,6 +2,11 @@
 "User-Safe" Password Organizer
 ###############################
 
+User-Safe is a program to save usernames and passwords for all the different online accounts
+that the modern internet user has. Users are prompted to input the website, username and password,
+which is then stored. Users can then look up stored information by typing in the name of the 
+website, which will then generate the username and password on file.
+
 Funcional requirements for password organization program.
 --------------------------------------------------------------------------------------------------------------
 
