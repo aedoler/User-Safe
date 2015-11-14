@@ -70,4 +70,25 @@ to type in the name of the service and have it generate my saved username and pa
 The service should be secure, so there should a at least a password prompt in order to receive 
 the information.
 
+*************************
+Acceptance Stories
+*************************
+
+Scenario 01: Storing User Information
+Given that I do not want to write my passwords and usernames on paper, I need a program
+in which to store them. 
+When I open up the program, I will be prompted to either enter a new password or to
+look up a current one. When choosing to enter new user information I will be prompted
+to enter the corresponding website, username, and password, which will then be written
+to a file. Ideally, when stored, passwords would be encrypted.
+
+Scenario 02: Looking Up User Information
+When user information for a website is forgotten, it may be consulted using the program.
+When I choose to consult my user information for a site, I will need to first enter a password.
+This password mustn't be forgotten, or else I will not be able to access any user information.
+Password retrievel questions may be added, to be prompted after a certain number of failed attempts..
+After the password is entered correctly, I should be able to type in the website and access
+both the username and password.
+
+
 

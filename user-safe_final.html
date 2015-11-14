@@ -340,45 +340,50 @@ ul.auto-toc {
 <body>
 <div class="document" id="user-safe-password-organizer">
 <h1 class="title">&quot;User-Safe&quot; Password Organizer</h1>
-<h2 class="subtitle" id="funcional-requirements-for-password-organization-program">Funcional requirements for password organization program.</h2>
 
+<p>User-Safe is a program to save usernames and passwords for all the different online accounts
+that the modern internet user has. Users are prompted to input the website, username and password,
+which is then stored. Users can then look up stored information by typing in the name of the
+website, which will then generate the username and password on file.</p>
+<div class="section" id="funcional-requirements-for-password-organization-program">
+<h1>Funcional requirements for password organization program.</h1>
 <div class="section" id="persona">
-<h1>Persona</h1>
+<h2>Persona</h2>
 <div class="section" id="name">
-<h2>Name:</h2>
+<h3>Name:</h3>
 <p>Alex</p>
 </div>
 <div class="section" id="details">
-<h2>Details:</h2>
+<h3>Details:</h3>
 <p>A Young professional that works full time in an office and is also an online student.
 Uses computer and technology often for many different tasks, including, work,
 studies and entertainment. Currently lives abroad and does not want to accumulate
 too many physical belongings and items. Sometimes unorganized and forgetful.</p>
 </div>
 <div class="section" id="goals">
-<h2>Goals:</h2>
+<h3>Goals:</h3>
 <p>Wants to be able to store information digitally rather than in writing in a notebook
 to allow for better organization, accessibility and portability, facilitating travel and
 avoiding loss.</p>
 </div>
 </div>
 <div class="section" id="problem-scenario">
-<h1>Problem Scenario</h1>
+<h2>Problem Scenario</h2>
 <div class="section" id="id1">
-<h2>Problem Scenario:</h2>
+<h3>Problem Scenario:</h3>
 <p>As Alex relies on the computer and different internet accounts to carry out his activities.
 He has many different user accounts on many different sites, each of which require different
 username and password specifications. All of these different combinations are
 very difficult for him to remember.</p>
 </div>
 <div class="section" id="current-alternatives">
-<h2>Current Alternatives:</h2>
+<h3>Current Alternatives:</h3>
 <p>Write down user information in notebook; keep Excel or Word document of user information;
 try to remember user information and complete reset procedures when he forgets such
 information.</p>
 </div>
 <div class="section" id="value-proposition">
-<h2>Value Proposition:</h2>
+<h3>Value Proposition:</h3>
 <p>Create a program to store user information that corresponds to certain sites, such as
 Blackboard, Netflix, Facebook, etc. User should be able to enter information via interactive
 prompt and have it automatically stored.The user can then call user information by inputting
@@ -387,13 +392,31 @@ it may be beneficial to require the entry of a password and to encrypt the store
 </div>
 </div>
 <div class="section" id="user-stories">
-<h1>User Stories</h1>
+<h2>User Stories</h2>
 <p>As Alex the young worker/student, I want to be able to store all of my user information in
 one program on my computer, allowing me to input this information once and be able to
 retrieve it easilly later on. I do not want to have to write anything down. I want to be able
 to type in the name of the service and have it generate my saved username and password.
 The service should be secure, so there should a at least a password prompt in order to receive
 the information.</p>
+</div>
+<div class="section" id="acceptance-stories">
+<h2>Acceptance Stories</h2>
+<p>Scenario 01: Storing User Information
+Given that I do not want to write my passwords and usernames on paper, I need a program
+in which to store them.
+When I open up the program, I will be prompted to either enter a new password or to
+look up a current one. When choosing to enter new user information I will be prompted
+to enter the corresponding website, username, and password, which will then be written
+to a file. Ideally, when stored, passwords would be encrypted.</p>
+<p>Scenario 02: Looking Up User Information
+When user information for a website is forgotten, it may be consulted using the program.
+When I choose to consult my user information for a site, I will need to first enter a password.
+This password mustn't be forgotten, or else I will not be able to access any user information.
+Password retrievel questions may be added, to be prompted after a certain number of failed attempts..
+After the password is entered correctly, I should be able to type in the website and access
+both the username and password.</p>
+</div>
 </div>
 </div>
 </body>
