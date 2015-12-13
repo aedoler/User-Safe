@@ -15,6 +15,9 @@ if os.path.exists('user_info.pkl'):
     filehandler = open('user_info.pkl', 'rb')
     USERDICT = pickle.load(filehandler)
     filehandler.close()
+else:
+    filehandler = open('user_info.pkl', 'wb')
+    filehandler.close()
 
 if USERINPUT == 'new':
     ENTERNEW = raw_input('Please enter the name of the website. '
@@ -31,12 +34,18 @@ if USERINPUT == 'new':
         filehandler = open('user_info.pkl', 'wb')
         pickle.dump(USERDICT, filehandler)
         filehandler.close()
-        print USERDICT
+
 
 elif USERINPUT == 'look up':
     LOOKUP = raw_input('Please enter the website for which you would like to '
                   'look up your user information ')
-    print USERDICT[LOOKUP]
+    USERINFO = 'Your user information for the website\ "{}" is as follows:\n\
+                USERNAME: {}\n\
+                PASSWORD: {}'
+
+    print USERINFO.format(LOOKUP.upper(), USERDICT[LOOKUP][0], USERDICT[LOOKUP][1])
+
+
     
 
                      
