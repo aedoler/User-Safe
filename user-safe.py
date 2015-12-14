@@ -12,12 +12,9 @@ USERINPUT = USERINPUT.lower()
 USERDICT = {}
 
 if os.path.exists('user_info.pkl'):
-    filehandler = open('user_info.pkl', 'rb')
-    USERDICT = pickle.load(filehandler)
-    filehandler.close()
-else:
-    filehandler = open('user_info.pkl', 'wb')
-    filehandler.close()
+    FILEHANDLER = open('user_info.pkl', 'rb')
+    USERDICT = pickle.load(FILEHANDLER)
+    FILEHANDLER.close()
 
 if USERINPUT == 'new':
     ENTERNEW = raw_input('Please enter the name of the website. '
@@ -27,25 +24,31 @@ if USERINPUT == 'new':
     ENTERNEW_NAME = ENTERNEW_NAME.lower()
     ENTERNEW_PASS = raw_input('Please enter you password for this website ')
     ENTERNEW_PASS = ENTERNEW_PASS.lower()
-    
-    if ENTERNEW not in USERDICT:
-        
-        USERDICT[ENTERNEW] = (ENTERNEW_NAME, ENTERNEW_PASS)
-        filehandler = open('user_info.pkl', 'wb')
-        pickle.dump(USERDICT, filehandler)
-        filehandler.close()
 
+    if ENTERNEW not in USERDICT:
+
+        USERDICT[ENTERNEW] = (ENTERNEW_NAME, ENTERNEW_PASS)
+        FILEHANDLER = open('user_info.pkl', 'wb')
+        pickle.dump(USERDICT, FILEHANDLER)
+        FILEHANDLER.close()
+
+    elif ENTERNEW in USERDICT:
+        UPDATEDICT = {}
+        UPDATEDICT[ENTERNEW] = (ENTERNEW_NAME, ENTERNEW_PASS)
+        USERDICT.update(UPDATEDICT)
+        FILEHANDLER = open('user_info.pkl', 'wb')
+        pickle.dump(USERDICT, FILEHANDLER)
+        FILEHANDLER.close()
 
 elif USERINPUT == 'look up':
-    LOOKUP = raw_input('Please enter the website for which you would like to '
-                  'look up your user information ')
-    USERINFO = 'Your user information for the website\ "{}" is as follows:\n\
+    LOOKUP = False
+    while LOOKUP not in USERDICT:
+        LOOKUP = raw_input('Please enter the website for which you would \
+like to look up your user information ')
+
+    USERINFO = 'Your user information for the website "{}" is as follows:\n\
                 USERNAME: {}\n\
                 PASSWORD: {}'
 
-    print USERINFO.format(LOOKUP.upper(), USERDICT[LOOKUP][0], USERDICT[LOOKUP][1])
-
-
-    
-
-                     
+    print USERINFO.format(LOOKUP.upper(), USERDICT[LOOKUP][0],
+                          USERDICT[LOOKUP][1])
