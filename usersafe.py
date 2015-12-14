@@ -67,6 +67,8 @@ this website: ')
             filehandler = open('user_info.pkl', 'wb')
             pickle.dump(userdict, filehandler)
             filehandler.close()
+            print '\nYou have successfully updated your user information!\n'
+            return None
 
     elif userinput == 'look up':
         lookup = False
